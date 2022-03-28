@@ -106,6 +106,26 @@ export class AppComponent implements OnInit {
     container.appendChild(button);
     button.click();
   }
+  public onOpenModal2(product: Product, mode: string): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    if (mode === 'add') {
+      button.setAttribute('data-target', '#addEmployeeModal');
+    }
+    if (mode === 'edit') {
+      this.editProduct = product;
+      button.setAttribute('data-target', '#updateEmployeeModal');
+    }
+    if (mode === 'delete') {
+      this.deleteProduct = product;
+      button.setAttribute('data-target', '#deleteEmployeeModal');
+    }
+    container.appendChild(button);
+    button.click();
+  }
 
 
 
