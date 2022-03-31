@@ -86,9 +86,11 @@ export class AppComponent implements OnInit {
     console.log(key);
     const results: Product[] = [];
     for (const product of this.products) {
-      if (product.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || product.productCode.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      if (product.name.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(product);
+      }
+      else{
+        console.log("bug")
       }
     }
     this.products = results;

@@ -18,38 +18,43 @@ nav {
 	top: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 0 2%;
-	height: 72px;
-	background-image: linear-gradient(45deg, #f00, #900);
+	height: 80px;
+	background-image: linear-gradient(45deg, #d33, #900);
     box-shadow: 0 4px 16px #000;
 }
 nav .logo {
 	float: left;
-	width: 40%;
 	height: 100%;
 	display: flex;
 	align-items: center;
-	font-size: 24px;
 	color: #fff;
-	padding-right: 150px;
+	padding-right: 15px;
 }
 nav .links {
 	float: right;
 	padding: 0;
 	margin: 0;
-	width: 60%;
 	height: 100%;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	font-size: 16px;
 }
 nav .links li {
 	list-style: none;
     color: #fff;
-    padding: 12px;
-    border-radius: 25px;
+    padding: 12px 8px;
+	margin: 20px;
+	display: inline-block;
+    border-radius: 20px;
+	box-sizing: border-box;
 }
 nav .links .user i, nav .links .admin i {
     color: #fff;
+    margin-right: 8px;
+}
+nav .links .userLogout i {
+    color: #000;
     margin-right: 8px;
 }
 
@@ -62,25 +67,19 @@ nav .links .admin, nav .links .user {
 }
 nav .links .userLogout {
     background-image: linear-gradient(45deg, #fff, #bbb);
-
     color: #000;
 }
 nav .links .user:hover, nav .links .admin:hover {
     cursor: pointer;
-    box-shadow: 0 0 8px #000;
+	text-shadow:  0 0 24px #fff;
+    /* box-shadow: 0 0 8px #000;
     background-image: linear-gradient(45deg, #f33, #600);
-    transition: all .1s ease-in-out;
-}
-nav .links .user:active, nav .links .admin:active {
-    background-color: #f00;
-    transition: background .3s ease-in-out;
+    transition: all .1s ease-in-out; */
 }
 
 nav .links .userLogout:hover {
     cursor: pointer;
-    box-shadow: 0 0 8px #000;
-    background-image: linear-gradient(45deg, #fff, #666);
-    transition: all .1s ease-in-out;
+	text-shadow:  0 0 24px #fff;
 }
 #nav-toggle {
 	position: absolute;
@@ -101,13 +100,25 @@ nav .icon-burger .line {
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1900px) {
+	nav .links li {
+		padding: 10px 4px;
+		font-size: 12px;
+		
+	}
+	nav {
+		height: 72px;
+	}
+}
+
+@media screen and (max-width: 1600px) {
 	nav .logo {
 		float: none;
 		width: auto;
 		justify-content: center;
 	}
 	nav .links {
+		
 		align-items: flex-end;
 		float: none;
 		position: fixed;
@@ -124,12 +135,15 @@ nav .icon-burger .line {
 		overflow: hidden;
 		box-sizing: border-box;
 		transition: all .5s ease-in-out;
+		
 	}
-	nav .links a {
-		font-size: 20px;
+		/* Sandviç menü problemi (telefonu boyutunda) */
+	nav .links li {
+		padding: 4px 12px;
+		font-size: 16px;
 	}
 	nav :checked ~ .links {
-		bottom: 0;
+		bottom: 200px;
 	}
 	nav .icon-burger {
 		display: block;
@@ -145,16 +159,11 @@ nav .icon-burger .line {
 	}
 	
 }
-
-.youtube-link {
-	position: fixed;
-	left: 20px;
-	bottom: 20px;
-	color: #000;
-	text-decoration: none;
-	font-size: 12px;
-}
-
 .pointer{
 	cursor: pointer;
+}
+.img-fluid{
+	height: 90px;
+	width: 90px;
+	
 }
