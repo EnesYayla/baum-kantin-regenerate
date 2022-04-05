@@ -15,7 +15,7 @@ export class AuthenticationService {
     if (this.checkCredentials(signInData)) {
       this.isAuthenticated = true;
       this.router.navigate(['home']);
-      return true;
+      return false;
     }
     this.isAuthenticated = false;
     return false;
