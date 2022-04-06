@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body *ngIf="authenticationService.isAuthenticated">
     <div class="navbar" *ngIf="authenticationService.isAuthenticated" >
     <nav>
         <input id="nav-toggle" type="checkbox">
         <div class="logo"><img src="../../../assets/images/logo.png" alt="" height="40px"></div>
         <ul class="links ">
+          <li class="admin" routerLink="/payment"><i class="fa-solid fa-pen"></i>Ödeme</li>
          <!-- <li class="admin" routerLink="/home"><i class="fa-solid fa-pen"></i>A</li>
          <li class="admin" routerLink="/statistics"><i class="fa-solid fa-pen"></i>B</li> -->
             <li (click)="onOpenModalForProducts(null, 'add')" class="admin" ><i class="fa-solid fa-pen"></i><a  
