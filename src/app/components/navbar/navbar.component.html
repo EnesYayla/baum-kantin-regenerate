@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body *ngIf="authenticationService.isAuthenticated">
-    <div class="navbar" *ngIf="authenticationService.isAuthenticated" >
+<body>
+    <div class="navbar" *ngIf="authenticationService.isAuthenticated">
     <nav>
         <input id="nav-toggle" type="checkbox">
-        <div class="logo"><img src="../../../assets/images/logo.png" alt="" height="40px"></div>
+        <div class="logo"><img src="../../../assets/images/logo.png" alt="" height="32px" ></div>
         <ul class="links ">
           <li class="admin" routerLink="/payment"><i class="fa-solid fa-pen"></i>Ödeme</li>
-         <!-- <li class="admin" routerLink="/home"><i class="fa-solid fa-pen"></i>A</li>
-         <li class="admin" routerLink="/statistics"><i class="fa-solid fa-pen"></i>B</li> -->
+         <!-- <li class="admin" routerLink="/home"><i class="fa-solid fa-pen"></i>Home</li>
+         <li class="admin" routerLink="/statistics"><i class="fa-solid fa-pen"></i>Statistics</li> -->
             <li (click)="onOpenModalForProducts(null, 'add')" class="admin" ><i class="fa-solid fa-pen"></i><a  
                 >Ürün Ekle <span class="sr-only">(current)</span></a
               ></li>
@@ -37,7 +38,6 @@
                 ngModel
                 name="key"
                 id="searchName"
-                class="form-control mr-sm-2"
                 placeholder="Ürün Ara..."
                 required
               /></li>
@@ -689,6 +689,9 @@
       <p>Ürün bulunamadı. Lütfen ürün ekleyiniz.</p>
     </div>
   </div>
+  
+
 </body>
 </html>
+
 <router-outlet></router-outlet>
