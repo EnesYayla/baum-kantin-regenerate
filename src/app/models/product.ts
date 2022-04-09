@@ -1,3 +1,4 @@
+
 export interface Product {
     id: number;
     name: string;
@@ -5,4 +6,9 @@ export interface Product {
     stock: number;
     imageUrl: string;
     productCode: string;
+    categoryId: number;
+
   }
+  
+  
+  

@@ -1,0 +1,31 @@
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div> -->
+  
+  <div *ngIf="authenticationService.isAuthenticated" >
+    <label for="filterText" class="form-label">Ara</label>
+    <input type="text" class="form-control" id="filterText" placeholder="Ne Aradınız?">
+  </div>
+  
+  <table class="table" *ngIf="authenticationService.isAuthenticated"> 
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Stok Adedi</th>
+        <th>Ürün Resmi</th>
+        <th>Ürün Kodu</th>
+        <th>Kategori Id</th>        
+      </tr>
+    </thead>
+    <tr *ngFor="let product of products" >
+      <td>{{ product.id }}</td>
+      <td>{{ product.name}}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.imageUrl }}</td>
+      <td>{{ product.productCode }}</td>
+      <td>{{ product.categoryId }}</td>
+    </tr>
+  </table>

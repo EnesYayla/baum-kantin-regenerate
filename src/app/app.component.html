@@ -1,4 +1,11 @@
-<app-navbar></app-navbar> 
-<!-- Sürekli arayüzde bulunuyor, ngIf ile görünüp yok oluyor. -->
-
-<router-outlet></router-outlet>
+<div class="container-xxl">
+  <app-navbar></app-navbar>
+  <div class="row">
+    <div class="col-md-3">
+      <app-category></app-category>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

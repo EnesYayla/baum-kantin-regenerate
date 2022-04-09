@@ -1,9 +1,19 @@
-<div>
-    <ul class="list-group">
-    <li class="list-group-item">Liste Deneme 1</li>
-    <li class="list-group-item">Liste Deneme 2</li>
-    <li class="list-group-item">Liste Deneme 3</li>
-    <li class="list-group-item">Liste Deneme 4</li>
-    <li class="list-group-item">Liste Deneme 5</li>
-  </ul>
-</div>
+<ul class="list-group" *ngIf="authenticationService.isAuthenticated">
+  <li 
+    [class]="getAllCategoryClass()"
+    routerLink="product"><span class="badge bg-primary">Tüm Ürünler</span></li>
+    <!-- Görsellik, şu an çalışmıyor -->
+    <li><span class="badge btn-danger">Sıcak İçecekler</span></li>
+    <li><span class="badge btn-secondary">Soğuk İçecekler</span></li>
+    <!-- Burası çalışacak, kategoriler backend'den gelecek   -->
+    <li
+    (click)="setCurrentCategory(category)"
+    routerLink="/products/category/{{ category.id }}"
+    *ngFor="let category of categories"
+    [class]="getCurrentCategoryClass(category)"
+  >
+    {{ category.name }}
+  </li>
+</ul>
+
+<h5 *ngIf="currentCategory with authenticationService.isAuthenticated">{{ currentCategory.name }} Selected</h5>
