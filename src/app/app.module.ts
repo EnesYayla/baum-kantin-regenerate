@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { ProductAddComponent } from './components/productCRUD/product-add/product-add.component';
 import { EmployeeAddComponent } from './components/employeeCRUD/employee-add/employee-add.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EmployeeAddComponent } from './components/employeeCRUD/employee-add/emp
     NotFoundComponent,
     ProductAddComponent,
     EmployeeAddComponent,
+    AddToCartComponent,
     
   ],
   imports: [

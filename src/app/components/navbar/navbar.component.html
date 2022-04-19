@@ -16,20 +16,21 @@
     <div class="navbar" *ngIf="authenticationService.isAuthenticated">
     <nav>
         <input id="nav-toggle" type="checkbox">
-        <div class="logo"><img src="../../../assets/images/logo.png" alt="" height="32px" ></div>
+        <div class="logo" routerLink="home"><img src="../../../assets/images/logo.png" alt="" height="32px" ></div>
         <ul class="links ">
          <!-- <li class="admin" routerLink="/payment"><i class="fa-solid fa-pen"></i>Ödeme</li>
          <li class="admin" routerLink="/product"><i class="fa-solid fa-pen"></i>Ödeme</li> -->
          <!-- <li class="admin" routerLink="/home"><i class="fa-solid fa-pen"></i>Home</li> -->
          <!-- <li class="admin" routerLink="/statistics"><i class="fa-solid fa-pen"></i>Statistics</li> -->
-            <li routerLink="/product-crud" class="admin" ><i class="fa-solid fa-pen"></i><a  
-                >Ürün Ekle <span class="sr-only">(current)</span></a
+            <li routerLink="product-crud" class="admin" ><i class="fa-solid fa-pen"></i><a  
+                >Ürünler <span class="sr-only">(current)</span></a
               ></li>
             <li routerLink="employee-crud" class="admin"><i class="fa-solid fa-pen"></i><a  
-                >Çalışan Ekle <span class="sr-only">(current)</span></a
+                >Çalışanlar<span class="sr-only">(current)</span></a
               ></li>
-            <li class="user" routerLink="/product"><i class="fa-solid fa-mug-hot" ></i>Ürünler</li>
-            <li class="user"><i class="fa-solid fa-users"></i>Çalışanlar</li>
+              <li class="admin" routerLink="add-to-card">Deneme</li>
+            <!-- <li class="user" routerLink="/product"><i class="fa-solid fa-mug-hot" ></i>Ürünler</li>
+            <li class="user"><i class="fa-solid fa-users"></i>Çalışanlar</li> -->
             <li class="userLogout"><i class="fa-solid fa-basket-shopping"></i>Sepet Tutarı : 0.00 TL</li>
             <li (click)="logOut()" class="userLogout"><i class="fa-solid fa-user"></i><a  >Oturumu Kapat</a></li>
             
