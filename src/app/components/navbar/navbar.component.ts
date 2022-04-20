@@ -7,6 +7,7 @@ import { Employee } from 'src/app/models/employee';
 import { Product } from 'src/app/models/product';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NgModule } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -19,12 +20,22 @@ export class NavbarComponent implements OnInit {
   }
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private productService: ProductService,
     private employeeService: EmployeeService,
     public authenticationService: AuthenticationService
   ) {}
 
   ngOnInit() {}
+
+  showProducts() {
+    this.router.navigate(['product-crud'], { relativeTo: this.route });
+  }
+
+  showEmployees() {
+    this.router.navigate(['employee-crud'], { relativeTo: this.route });
+  }
 
   logOut() {
     this.authenticationService.logOut();
