@@ -14,6 +14,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AuthGuard } from './guards/auth.guard';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: WelcomeComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
